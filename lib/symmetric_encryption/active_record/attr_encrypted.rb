@@ -78,7 +78,7 @@ module SymmetricEncryption
         #
         #   User.encrypted_attributes  =>  { email: encrypted_email }
         def symmetric_encrypted_attributes
-          @symmetric_encrypted_attributes ||= superclass.respond_to?(:encrypted_attributes) ? superclass.encrypted_attributes.dup : {}
+          @symmetric_encrypted_attributes ||= superclass.respond_to?(:encrypted_attributes) ? superclass.symmetric_encrypted_attributes.dup : {}
         end
 
         # Return the name of all encrypted virtual attributes as an Array of symbols
